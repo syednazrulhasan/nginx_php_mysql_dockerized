@@ -263,7 +263,7 @@ Step 9: cd into the cloned directory and run following command
 ```
 docker-compose up -d
 ```
-Step 10 Run following to update user anf gropup of html folder
+Step 10 Run following to update user and group of html folder
 ```
 chown -R ubuntu:www-data  www/html
 ```
