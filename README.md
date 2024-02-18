@@ -3,10 +3,8 @@ This repo contains code that helps to containerize(dockerize) Nginx/PHP/MySQL th
 ===================================
 
 ### Intro
-Learn how to containerize(dockerize) Apache,PHP and MySQL quickly for testing or demo purposes using Docker Compose and Dockerfile. Deploy your application environment in moments with flexibility of PHP.ini and Apache.conf files, mirroring your development computer's structure with just one command 
-```
-docker-compose up -d
-```
+Learn how to containerize(dockerize) Nginx,PHP and MySQL quickly for testing or demo purposes using Docker Compose and Dockerfile. Deploy your application environment in moments with flexibility of `php.ini` and `default.conf` files, mirroring your development computer's structure with just one command `
+docker-compose up -d`
 
 There are 6 simple files that you can clone from this repo's main branch
 
@@ -26,10 +24,11 @@ There are 6 simple files that you can clone from this repo's main branch
         └── index.php
 ```
 
-Once this structure is replicated next step is to install docker on server OS followed by docker-compose followed by running command ```docker-compose up -d``` to spin up the Nginx PHP MySQL as seperate docker containers on the host machine. If you replicate exact same structure it would also create a database with the name `kaveri` also create corresponding user and password associated with that database which can be found under index.php example below file. This combination of `dockerfile` and `docker-compose.yml` makes use of persistent volume for database filesysem and web site file systems. 
+Once this structure is replicated next step is to install docker on server OS followed by docker-compose followed by running command ```docker-compose up -d``` to spin up the Nginx PHP MySQL as seperate docker containers on the host machine. 
 
+If you replicate exact same structure it would also create a database with the name `kaveri` also create corresponding user and password associated with that database which can be found below in `index.php` example. This combination of `dockerfile` and `docker-compose.yml` makes use of persistent volume for database filesysem and web site file systems. 
 
-The following code attempts to connect to a MySQL database using the mysqli interface from PHP. There is `phpinfo()` at the bottom to show what possible values do php have on this system which is also overridden by `php.ini` in `www/html` folder
+The following code attempts to connect to a MySQL database using the mysqli of PHP. There is `phpinfo()` at the bottom to show possible values of php configurations on the host system(Ubuntu 22.04 on AWS EC2 in our case) which is also overridden by `php.ini` in `www/html` folder
 
 #### index.php
 ```
@@ -69,7 +68,7 @@ The following code attempts to connect to a MySQL database using the mysqli inte
 </html>
 ```
 
-The following is a simple `docker-compose.yml` that facilitates the dockerization of Nginx/PHP/MySQL
+The following is a simple `docker-compose.yml` that facilitates the dockerization of Nginx/PHP/MySQL in one go
 #### `docker-compose.yml`
 ```
   version: "3.9"
@@ -257,7 +256,7 @@ docker-compose --version
 
 Step 8: Clone the setup files from git
 ```
-git clone https://github.com/syednazrulhasan/apache_php_mysql_dockerized.git
+git clone https://github.com/syednazrulhasan/nginx_php_mysql_dockerized.git
 ```
 
 Step 9: cd into the cloned directory and run following command
